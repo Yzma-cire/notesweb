@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notes - Notes & Videos</title>
+  <link rel="stylesheet" href="../style/style.css" />
+  <link rel="icon" href="../image/notebook.png">
+</head>
+<body>
+  <header>
+    <nav aria-label="Primary navigation">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="notes.html" aria-current="page">Notes</a></li>
+        <li><a href="videos.html">Videos</a></li>
+      </ul>
+    </nav>
+    <button id="theme-toggle" aria-pressed="false" aria-label="Toggle light/dark theme">Toggle Theme</button>
+  </header>
+
+  <main>
+    <section aria-labelledby="create-note-title" class="note-creation-section">
+      <h2 id="create-note-title">Create a Note</h2>
+      <form id="note-form" novalidate>
+        <div class="form-group">
+          <label for="note-title">Title <span aria-hidden="true">*</span></label>
+          <input type="text" id="note-title" name="note-title" required maxlength="100" autocomplete="off" />
+        </div>
+        <div class="form-group">
+          <label for="note-content">Content <span aria-hidden="true">*</span></label>
+          <textarea id="note-content" name="note-content" rows="5" required maxlength="1000"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="note-media">Optional Media Attachment (Image URL or Video URL)</label>
+          <input type="url" id="note-media" name="note-media" placeholder="https://example.com/media.jpg or https://youtu.be/..." autocomplete="off" />
+          <small>Supported: Image URLs or YouTube/Facebook video URLs</small>
+        </div>
+        <button type="submit" class="btn-primary">Save Note</button>
+      </form>
+    </section>
+
+    <section aria-labelledby="saved-notes-title" class="saved-notes-section">
+      <h2 id="saved-notes-title">Saved Notes</h2>
+      <div id="notes-container" class="scrollable-container" tabindex="0" aria-live="polite" aria-relevant="additions"></div>
+    </section>
+  </main>
+
+  <script src="../script.js" defer></script>
+</body>
+</html>

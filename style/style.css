@@ -1,0 +1,303 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+*{
+font-family: bungee;
+text-decoration: none;
+}
+@font-face {
+  font-family: bungee;
+  src: url(../fonts/Bungee-Regular.ttf);
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+  outline-offset: 2px;
+}
+
+header {
+  background-color: var(--header-bg);
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--header-border);
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.nav-list a[aria-current="page"] {
+  background-color: var(--nav-current-bg);
+  color: var(--nav-current-color);
+  cursor: default;
+}
+
+#theme-toggle {
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#theme-toggle:hover,
+#theme-toggle:focus {
+  background-color: var(--btn-hover-bg);
+  outline: none;
+}
+
+main {
+  flex-grow: 1;
+  padding: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+h1, h2 {
+  color: var(--heading-color);
+  margin-top: 0;
+}
+
+.welcome-section p {
+  font-size: 1.125rem;
+  max-width: 600px;
+}
+
+form {
+  background-color: var(--form-bg);
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  box-shadow: var(--form-shadow);
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+input[type="text"],
+input[type="url"],
+textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.5rem 0.75rem;
+  border: 2px solid var(--input-border);
+  border-radius: 6px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="url"]:focus,
+textarea:focus {
+  border-color: var(--input-focus-border);
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+small {
+  font-size: 0.8rem;
+  color: var(--small-text);
+}
+
+.btn-primary {
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  padding: 0.6rem 1.25rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--btn-hover-bg);
+  outline: none;
+}
+
+.scrollable-container {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.scrollable-container:focus {
+  outline: 2px solid var(--focus-outline);
+  outline-offset: 2px;
+}
+
+.note-card,
+.video-card {
+  border: 2px solid var(--card-border);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: var(--card-bg);
+  box-shadow: var(--card-shadow);
+}
+
+.note-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--heading-color);
+}
+
+.note-content {
+  white-space: pre-wrap;
+  margin-bottom: 0.75rem;
+  color: var(--text-color);
+}
+
+.note-media img,
+.note-media iframe,
+.video-card iframe {
+  max-width: 100%;
+  border-radius: 8px;
+  display: block;
+  margin: 0.5rem 0 0 0;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 1rem;
+  }
+
+  form {
+    padding: 1rem;
+  }
+}
+
+/* THEME VARIABLES OBIS!!!! */
+
+/* light theme OWO */
+:root {
+  --bg-color: #f0f6ff;
+  --text-color: #0a1e4d;
+  --heading-color: #003080;
+  --link-color: #0047b3;
+  --header-bg: #cce0ff;
+  --header-border: #99bbff;
+  --nav-current-bg: #0047b3;
+  --nav-current-color: #ffffff;
+  --btn-bg: #0047b3;
+  --btn-text: #ffffff;
+  --btn-hover-bg: #003080;
+  --form-bg: #ffffff;
+  --form-shadow: rgba(0, 71, 179, 0.15) 0 2px 8px;
+  --input-border: #99bbff;
+  --input-focus-border: #0047b3;
+  --input-bg: #ffffff;
+  --small-text: #666f8a;
+  --card-border: #99bbff;
+  --card-bg: #e6f0ff;
+  --card-shadow: rgba(0, 71, 179, 0.1) 0 1px 4px;
+  --focus-outline: #0047b3;
+}
+
+/* this is for dark theme uwu */
+body.dark-theme {
+  --bg-color: #0a122a;
+  --text-color: #cbd5ff;
+  --heading-color: #a3bffa;
+  --link-color: #7ea6ff;
+  --header-bg: #001a66;
+  --header-border: #003080;
+  --nav-current-bg: #003080;
+  --nav-current-color: #cbd5ff;
+  --btn-bg: #003080;
+  --btn-text: #cbd5ff;
+  --btn-hover-bg: #001a66;
+  --form-bg: #001a33;
+  --form-shadow: rgba(0, 48, 128, 0.7) 0 2px 8px;
+  --input-border: #3355aa;
+  --input-focus-border: #7ea6ff;
+  --input-bg: #001a33;
+  --small-text: #7ea6ff;
+  --card-border: #3355aa;
+  --card-bg: #00204d;
+  --card-shadow: rgba(0, 48, 128, 0.5) 0 1px 4px;
+  --focus-outline: #7ea6ff;
+}
+
+
+/* delete button >.< */
+.note-delete-btn{
+  background-color: #0047b3;
+  border: #a3bffa;
+  border-radius: 50px;
+  color: #a3bffa;
+  
+ 
+}
+.note-delete-btn:hover{
+  background-color: #c4d6ff;
+  color: #00238d8a;
+  border-color: #001a66;
+  overflow: visible;
+}
+.line{
+
+  border-bottom: 2px solid var(--header-border);
+  margin-top: 2rem;
+  background-color: var(--heading-color);
+}
+.vertical-space{
+  margin-top: 2rem;
+}
